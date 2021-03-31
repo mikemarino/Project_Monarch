@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS monarch_db;
+CREATE DATABASE monarch_db;
