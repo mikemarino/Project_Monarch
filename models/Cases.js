@@ -24,11 +24,11 @@ Case.init(
         autoIncrement: true,
       },
     start_time: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     end_time: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: false,
       },
     notes: {
