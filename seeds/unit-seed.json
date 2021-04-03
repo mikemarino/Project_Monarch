@@ -1,0 +1,24 @@
+[
+	{
+		"unit_name": "30 Minutes"
+	},
+	{
+		"unit_name": "Hour"
+	},
+
+	{
+		"unit_name": "Day"
+	},
+
+	{
+		"unit_name": "Week"
+	},
+
+	{
+		"unit_name": "Month"
+	},
+
+	{
+		"unit_name": "Year"
+	}
+]

@@ -2,31 +2,36 @@ const {
     Model,
     DataTypes
 } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 
-class Pet extends Model {}
+class Owner extends Model {}
 
-Pet.init({
+Owner.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
+    first_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    birth_date: {
-        type: DataTypes.DATE,
+    last_name: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
-    species_id: {
+    mobile: {
         type: DataTypes.INTEGER,
-        references: {
-            model: 'species',
-            key: 'id',
-        },
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    phone: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     notes: {
         type: DataTypes.TEXT,
@@ -37,7 +42,7 @@ Pet.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Pet'
+    modelName: 'owner'
 });
 
-module.exports = Pet;
+module.exports = Owner;
