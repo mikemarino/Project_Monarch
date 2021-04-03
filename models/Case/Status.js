@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 
-class Current extends Model { }
+class Status extends Model { }
 
-Current.init(
+Status.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,23 +11,23 @@ Current.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        case_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        status_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        notes: {
+        status_name: {
             type: DataTypes.STRING,
+            allowNull: false,
+
         },
-        insert_time: {
-            timestamps: true
+        status_category_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'status_category',
+                key: 'id',
+            }
+
+        },
+        is_closing_status: {
+            type: DataTypes.BOOLEAN,
+            
         }
 
     },
@@ -36,8 +36,8 @@ Current.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'current',
+        modelName: 'status',
     }
 );
 
-module.exports = Current;
+module.exports = Status;

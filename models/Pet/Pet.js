@@ -2,36 +2,35 @@ const {
     Model,
     DataTypes
 } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 
-class Owner extends Model {}
+class Pet extends Model {
+    // checkPassword(loginPw) {
+    //     return bcrypt.compareSync(loginPw, this.password);
+    // }
+}
 
-Owner.init({
+Pet.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    first_name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    last_name: {
-        type: DataTypes.STRING,
+    birth_date: {
+        type: DataTypes.DATE,
         allowNull: false,
     },
-    mobile: {
+    species_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    phone: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        references: {
+            model: 'species',
+            key: 'id',
+        },
     },
     notes: {
         type: DataTypes.TEXT,
@@ -42,7 +41,7 @@ Owner.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'owner'
+    modelName: 'pet'
 });
 
-module.exports = Owner;
+module.exports = Pet;

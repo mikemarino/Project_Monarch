@@ -2,7 +2,7 @@ const {
     Model,
     DataTypes
 } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 
 class Pet_owner extends Model {}
 
@@ -14,7 +14,7 @@ Pet_owner.init({
         autoIncrement: true,
     },
     pet_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'pet',
