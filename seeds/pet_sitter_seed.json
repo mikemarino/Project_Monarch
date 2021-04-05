@@ -7,7 +7,7 @@
 		"mobile": "141-151-1515",
 		"email": "snort@simp.com",	
 		"phone": "321-515-1424",
-		"service_id": ""
+		"service_id": 0
 	
 	},
 	{
@@ -18,7 +18,7 @@
 		"mobile": "",
 		"email": "",	
 		"phone": "",
-		"service_id": ""
+		"service_id": 0
 	
 	},
 	{
@@ -29,8 +29,8 @@
 		"mobile": "",
 		"email": "",	
 		"phone": "",
-		"service_id": ""
-	
+		"service_id": 0
+
 	},
 	{
 		"sitter_first_name": "Sideshow Mel",
@@ -40,7 +40,7 @@
 		"mobile": "",
 		"email": "",	
 		"phone": "",
-		"service_id": ""
+		"service_id": 0
 	
 	},
 	{
@@ -51,7 +51,7 @@
 		"mobile": "",
 		"email": "",		
 		"phone": "",
-		"service_id": ""
+		"service_id": 0
 
 	}
 ]

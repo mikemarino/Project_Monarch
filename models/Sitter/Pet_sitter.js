@@ -29,6 +29,7 @@ Pet_sitter.init({
         zipcode_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
             references: {
                 model: 'zipcode',
                 key: 'id',
@@ -49,6 +50,7 @@ Pet_sitter.init({
         service_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
             references: {
                 model: 'service',
                 key: 'id',
@@ -57,6 +59,7 @@ Pet_sitter.init({
         skill_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
             references: {
                 model: 'skills',
                 key: 'id',
@@ -77,6 +80,7 @@ Pet_sitter.init({
         watchSize: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 1,
             references: {
                 model: 'size',
                 key: 'id',
@@ -84,11 +88,13 @@ Pet_sitter.init({
         },
         host: {
             type: DataTypes.BOOLEAN,
+            defaultValue: false,
             allowNull: false
         },
         hostSize: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
             references: {
                 model: 'size',
                 key: 'id',
@@ -98,7 +104,7 @@ Pet_sitter.init({
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'review',
+                model: 'sitterReview',
                 key: 'id',
             }
         },
