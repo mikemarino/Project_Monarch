@@ -32,10 +32,41 @@ Pet.init({
             key: 'id',
         },
     },
+    address: {
+        type: DataTypes.STRING,
+    },
+    zipcode: {
+        type: DataTypes.STRING,
+        // references: {
+        //     model: 'zipcode',
+        //     key: 'id',
+        // }
+    },
+    age: {
+        type: DataTypes.STRING
+    },
+    size: {
+        type: DataTypes.STRING
+    },
+    breed: {
+        type: DataTypes.STRING
+    },
+    color: {
+        type: DataTypes.STRING
+    },
+    characteristics: {
+        type: DataTypes.STRING
+    },
+    houseTrained: {
+        type: DataTypes.BOOLEAN
+    },
     notes: {
         type: DataTypes.TEXT,
         allowNull: false,
-    }
+    },
+    petShelter: {
+        type: DataTypes.STRING
+    },
 }, {
     sequelize,
     timestamps: false,

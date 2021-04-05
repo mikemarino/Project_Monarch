@@ -24,7 +24,6 @@ Avaliable_for.init({
     species_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        // add foreign key
         references: {
             model: 'species',
             key: 'id',
