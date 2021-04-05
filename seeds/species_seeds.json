@@ -1,24 +1,24 @@
 [
     {
-        "species_name": "Bulldog"
+        "species_name": "Dog"
     },
     {
-        "species_name": "Pointer"
-    },
-
-    {
-        "species_name": "Golden Retriever"
+        "species_name": "Cat"
     },
 
     {
-        "species_name": "Labrador"
+        "species_name": "Puppy"
     },
 
     {
-        "species_name": "American Short Hair"
+        "species_name": "Kitten"
     },
 
     {
-        "species_name": "Yorkie"
+        "species_name": "Senior Dog"
+    },
+
+    {
+        "species_name": "Senior Cat"
     }
 ]
