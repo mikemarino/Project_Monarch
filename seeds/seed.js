@@ -42,6 +42,8 @@ const zipData = require('../seeds/zipcode.json');
 const noteData = require('../seeds/note-seeds.json');
 const currentData = require('../seeds/current-seeds.json');
 const statusData = require('../seeds/status-seeds.json');
+const pet_ownerData = require('../seeds/pet_sitter_seed.json');
+const statCatData = require('../seeds/statcategory-seeds.json');
 
 
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
@@ -78,6 +80,31 @@ const seedDatabase = async () => {
     });
 
     const unit = await Unit.bulkCreate(unitData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const note = await Note.bulkCreate(noteData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const status = await Status.bulkCreate(statusData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const current = await Current_status.bulkCreate(currentData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const pet_owner = await Pet_owner.bulkCreate(pet_ownerData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const statCategory = await Status_category.bulkCreate(statCatData, {
         individualHooks: true,
         returning: true,
     });
