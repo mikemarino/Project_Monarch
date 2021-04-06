@@ -42,7 +42,7 @@ Current_status.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'current',
+    modelName: 'current_status',
 });
 
 module.exports = Current_status;

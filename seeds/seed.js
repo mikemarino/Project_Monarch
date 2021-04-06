@@ -36,8 +36,13 @@ const sitterData = require('../seeds/pet_sitter_seed.json');
 const petData = require('../seeds/pet_seeds.json');
 const speciesData = require('../seeds/species_seeds.json');
 const unitData = require('../seeds/unit_seed.json');
+
 const zipData = require('../seeds/zipcode.json');
 // const reviewData = require('../seeds/zipcode.json');
+const noteData = require('../seeds/note-seeds.json');
+const currentData = require('../seeds/current-seeds.json');
+const statusData = require('../seeds/status-seeds.json');
+
 
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
 const seedDatabase = async () => {
