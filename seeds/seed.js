@@ -22,6 +22,11 @@ const Pet_sitter = require('../models/Sitter/Pet_sitter');
 const Provides = require('../models/Sitter/Provides');
 const Service = require('../models/Sitter/Service');
 const Unit = require('../models/Sitter/Unit');
+const Zipcode = require('../models/Sitter/Zipcode');
+const Skills = require('../models/Sitter/Skills');
+const Size = require('../models/Pet/Size')
+const Review = require('../models/Sitter/Review')
+const sitterReview = require('../models/Sitter/sitterReview')
 
 //--------------- BEGIN SEED DATA --------------------
 
@@ -31,10 +36,12 @@ const sitterData = require('../seeds/pet_sitter_seed.json');
 const petData = require('../seeds/pet_seeds.json');
 const speciesData = require('../seeds/species_seeds.json');
 const unitData = require('../seeds/unit_seed.json');
+
+const zipData = require('../seeds/zipcode.json');
+// const reviewData = require('../seeds/zipcode.json');
 const noteData = require('../seeds/note-seeds.json');
 const currentData = require('../seeds/current-seeds.json');
 const statusData = require('../seeds/status-seeds.json');
-
 
 
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
@@ -42,11 +49,20 @@ const seedDatabase = async () => {
     await sequelize.sync({
         force: true
     });
-    const species = await Species.bulkCreate(speciesData, {
+
+    const zipcode = await Zipcode.bulkCreate(zipData, {
         individualHooks: true,
         returning: true,
     });
 
+    const species = await Species.bulkCreate(speciesData, {
+        individualHooks: true,
+        returning: true,
+    });
+    const sitRev = await sitterReview.bulkCreate(sitterReviewData, {
+        individualHooks: true,
+        returning: true,
+    });
     const pet = await Pet.bulkCreate(petData, {
         individualHooks: true,
         returning: true,
@@ -68,7 +84,20 @@ const seedDatabase = async () => {
 
 
 
+    const skills = await Skills.bulkCreate(skillData, {
+        individualHooks: true,
+        returning: true,
+    });
 
+    const size = await Size.bulkCreate(sizeData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const Review = await Review.bulkCreate(reviewData, {
+        individualHooks: true,
+        returning: true,
+    });
 
 
     // for (const project of projectData) {

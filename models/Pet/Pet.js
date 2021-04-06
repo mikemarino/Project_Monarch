@@ -24,9 +24,11 @@ Pet.init({
     birth_date: {
         type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: 01/01/2021,
     },
     species_id: {
         type: DataTypes.INTEGER,
+        defaultValue: '0',
         references: {
             model: 'species',
             key: 'id',
@@ -34,13 +36,15 @@ Pet.init({
     },
     address: {
         type: DataTypes.STRING,
+        defaultValue: 'No address',
     },
-    zipcode: {
-        type: DataTypes.STRING,
-        // references: {
-        //     model: 'zipcode',
-        //     key: 'id',
-        // }
+    zipcode_id: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        references: {
+            model: 'zipcode',
+            key: 'id',
+        }
     },
     age: {
         type: DataTypes.STRING
@@ -58,10 +62,11 @@ Pet.init({
         type: DataTypes.STRING
     },
     houseTrained: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
     },
     notes: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     petShelter: {

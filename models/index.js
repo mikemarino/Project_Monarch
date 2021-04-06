@@ -35,6 +35,9 @@ const Skills = require('./Sitter/Skills');
 Pet.belongsTo(Species, {
     foreignKey: 'species_id'
 });
+Pet.belongsTo(Zipcode, {
+    foreignKey: 'zipcode_id'
+})
 
 //
 Case.belongsTo(Pet, {
@@ -64,16 +67,15 @@ Pet_sitter.belongsTo(Size, {
 Pet_sitter.belongsTo(Zipcode, {
     foreignKey: 'zipcode_id'
 })
+
 Review.belongsToMany(Pet_sitter, {
     through: sitterReview,
     foreignKey: 'R_id'
-
 })
 Pet_sitter.belongsToMany(Review, {
     through: sitterReview,
     foreignKey: 'PS_id'
 })
-
 
 
 module.exports = {
