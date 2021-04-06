@@ -15,18 +15,18 @@ SitterReview.init({
         PS_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'pet_sitter',
-            //     key: 'id',
-            // }
+            references: {
+                model: 'pet_sitter',
+                key: 'id',
+            }
         },
         R_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'review',
-            //     key: 'id',
-            // }
+            references: {
+                model: 'review',
+                key: 'id',
+            }
         },
     }, {
         sequelize,

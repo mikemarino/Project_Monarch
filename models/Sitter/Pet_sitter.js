@@ -100,14 +100,14 @@ Pet_sitter.init({
                 key: 'id',
             }
         },
-        review_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'sitterReview',
-                key: 'id',
-            }
-        },
+        // review_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'sitterReview',
+        //         key: 'id',
+        //     }
+        // },
     }, {
         sequelize,
         timestamp: false,

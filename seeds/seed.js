@@ -25,6 +25,7 @@ const Unit = require('../models/Sitter/Unit');
 const Zipcode = require('../models/Sitter/Zipcode');
 const Skills = require('../models/Sitter/Skills');
 const Size = require('../models/Pet/Size')
+const Review = require('../models/Sitter/Review')
 const sitterReview = require('../models/Sitter/sitterReview')
 
 //--------------- BEGIN SEED DATA --------------------
@@ -36,6 +37,7 @@ const petData = require('../seeds/pet_seeds.json');
 const speciesData = require('../seeds/species_seeds.json');
 const unitData = require('../seeds/unit_seed.json');
 const zipData = require('../seeds/zipcode.json');
+// const reviewData = require('../seeds/zipcode.json');
 
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
 const seedDatabase = async () => {
@@ -52,7 +54,10 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
-
+    const sitRev = await sitterReview.bulkCreate(sitterReviewData, {
+        individualHooks: true,
+        returning: true,
+    });
     const pet = await Pet.bulkCreate(petData, {
         individualHooks: true,
         returning: true,
@@ -84,10 +89,11 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const sitRev = await sitterReview.bulkCreate(sitterReviewData, {
+    const Review = await Review.bulkCreate(reviewData, {
         individualHooks: true,
         returning: true,
     });
+
 
     // for (const project of projectData) {
     //     await Project.create({
