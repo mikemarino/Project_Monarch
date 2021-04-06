@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "status_category_name": "Available"
+    },
+    {
+        "id": 2,
+        "status_category_name": "Not Available"
+    },
+    {
+        "id": 3,
+        "status_category_name": "Available"
+    },
+    {
+        "id": 4,
+        "status_category_name": "Not Available"
+    },
+    {
+        "id": 5,
+        "status_category_name": "Available"
+    }
+]
