@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 // const { Case, Current_status, Note, Status_category, Status } = require('../models/Case/Case');
 
-const { Owner, Pet_owner, Pet, Species } = require('../models/Pet');
+//const { Owner, Pet_owner, Pet, Species } = require('../models/Pet');
 
 const User = require('../models/User/User');
 const Case = require('../models/Case/Case');
@@ -14,10 +14,10 @@ const Current_status = require('../models/Case/Current_status');
 const Note = require('../models/Case/Note');
 const Status_category = require('../models/Case/Status_category');
 const Status = require('../models/Case/Status');
-// const Owner = require('../models/Pet/Owner');
-// const Pet_owner = require('../models/Pet/Pet_owner');
-// const Species = require('../models/Pet/Species');
-// const Pet = require('../models/Pet/Pet');
+const Owner = require('../models/Pet/Owner');
+const Pet_owner = require('../models/Pet/Pet_owner');
+const Species = require('../models/Pet/Species');
+const Pet = require('../models/Pet/Pet');
 
 const Invoice = require('../models/Plan_Provide/Invoice');
 const Service_planned = require('../models/Plan_Provide/Service_planned');
@@ -27,7 +27,9 @@ const Pet_sitter = require('../models/Sitter/Pet_sitter');
 const Provides = require('../models/Sitter/Provides');
 const Service = require('../models/Sitter/Service');
 const Unit = require('../models/Sitter/Unit');
-// const withAuth = require('../models./utils/auth');
+const withAuth = require('../utils/auth');
+
+
 
 // router.get('/', async (req, res) => {
 //     // find all pets
@@ -105,40 +107,51 @@ const Unit = require('../models/Sitter/Unit');
 //     }
 // });
 
-// // Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//     try {
-//         // Find the logged in user based on the session ID
-//         const userData = await User.findByPk(req.session.user_id, {
-//             attributes: {
-//                 exclude: ['password']
-//             },
-//             include: [{
-//                 model: Project
-//             }],
-//         });
+// Use withAuth middleware to prevent access to route
+/*
+router.get('/profile', withAuth, async (req, res) => {
+    try {
+        // Find the logged in user based on the session ID
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: {
+                exclude: ['password']
+            },
+            include: [{
+                model: Project
+            }],
+        });
 
-//         const user = userData.get({
-//             plain: true
-//         });
+        const user = userData.get({
+            plain: true
+        });
 
-//         res.render('profile', {
-//             ...user,
-//             logged_in: true
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        res.render('profile', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+*/
+router.get('/', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/login');
+        return;
+    }
 
-// router.get('/login', (req, res) => {
-//     // If the user is already logged in, redirect the request to another route
-//     if (req.session.logged_in) {
-//         res.redirect('/profile');
-//         return;
-//     }
+    res.render('login');
+});
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/profile');
+        return;
+    }
 
-//     res.render('login');
-// });
+    res.render('login');
+});
 
 module.exports = router;
+

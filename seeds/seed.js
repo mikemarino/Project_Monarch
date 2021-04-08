@@ -30,6 +30,7 @@ const sitterReview = require('../models/Sitter/sitterReview')
 
 //--------------- BEGIN SEED DATA --------------------
 
+const userData = require('../seeds/user-seeds.json')
 
 const caseData = require('../seeds/case-seeds.json');
 const sitterData = require('../seeds/pet_sitter_seed.json');
@@ -50,6 +51,11 @@ const statCatData = require('../seeds/statcategory-seeds.json');
 const seedDatabase = async () => {
     await sequelize.sync({
         force: true
+    });
+
+    const user = await User.bulkCreate(userData, {
+        individualHooks: true,
+        returning: true,
     });
 
     const zipcode = await Zipcode.bulkCreate(zipData, {
@@ -109,8 +115,6 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-
-
     const skills = await Skills.bulkCreate(skillData, {
         individualHooks: true,
         returning: true,
@@ -121,7 +125,7 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const Review = await Review.bulkCreate(reviewData, {
+    const review = await Review.bulkCreate(reviewData, {
         individualHooks: true,
         returning: true,
     });
