@@ -4,19 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>PET SIT CITY</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+ <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<script src="https://kit.fontawesome.com/357c939040.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Project Monarch</a>
+ <!--added out logo icon from faunt awsome -->       
+       <i class="fas fa-paw">Pet Sit City</i>
       </h1>
-      <nav>
+        <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -26,8 +28,30 @@
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+
+
+<main class="container container-fluid mt-5">
+    
+<div class="col s12 m7">
+    <h2 class="header">Pet Sit City</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://images.app.goo.gl/EQXNTEfMrQ6EB8eq7">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Sign up or Sign in </p>
+        </div>
+        <div class="card-action">
+          <a href="#">sign up</a>
+        </div>
+        <div class="card-action">
+          <a href="#">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
       {{{ body }}}
     </main>
     <footer>
@@ -36,7 +60,7 @@
   </div>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
+ {{#if logged_in}}
   <script src="../../public/js/logout.js"></script>
   {{/if}}
 </body>
