@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {
     Pet_sitter
 } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
