@@ -1,0 +1,78 @@
+<!-- search handle bars-->
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a User:</h3>
+
+    <form class="form new-user-form">
+      <div class="form-group">
+        <label for="sitter_first_name">First Name:</label>
+        <input class="form-input" type="text" id="sitter_first_name" name="sitter_first_name" />
+      </div>
+
+      <div class="form-group">
+        <label for="sitter_last_name">Last Name:</label>
+        <input class="form-input" type="text" id="sitter_last_name" name="sitter_last_name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-input" type="text" id="email" email="email" />
+      </div>
+      
+      <div class="form-group">
+        <label for="address"> Address>:</label>
+        <input class="form-input" type="text" id="address" name="na" />
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode_id">ZIP Code:</label>
+        <input class="form-input" type="number" id="zipcode_id" name="zipcode_id" />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input class="form-input" type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input class="form-input" type="text" id="mobile" name="mobile" />
+      </div>
+
+ <!--BIO-->    
+      <div class="form-group">
+        <label for="aboutTitle">Pet Sitter Tag Line (About Title):</label>
+        <textarea class="aboutTitle" id="aboutTitle" name="aboutTitle"></textarea>
+        <textarea class="aboutText" id="aboutText" name="aboutText"></textarea>
+      </div>
+
+
+<!--the create button -->      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current User:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
