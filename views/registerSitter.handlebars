@@ -104,24 +104,25 @@
         </div>
 
             <div class="row border">
-            <div class="col s12 m12 m12 center-align border">
+            <div class="col s12 m12 m12 border">
                 SERVICES 
                 {{#if services.length}}
                 <div class="col-md-6 project-list">
                 <h3>Services:</h3>
 
                     {{#each services as |service|}}
-                    <div class="row mb-2">
-                        <div class="col-md-8">
-                        <h4><a href="/project/{{service.id}}">{{service.service_name}}</a></h4>
-                    </div>
-                    <div class="col-md-4">
-                        <button class="btn btn-sm btn-danger" data-id="{{service.id}}">DELETE</button>
-                    </div>
-                    </div>
+
+                        <p>
+                            <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span>{{service.service_name}}</span>
+                            </label>
+                        </p>
+
+
                     {{/each}}
-            </div>
-            {{/if}}
+                </div>
+                {{/if}}
 
             </div>
         </div>
@@ -134,3 +135,11 @@
 </form>
 
 
+ {{!-- <div class="row mb-2">
+                        <div class="col-md-8">
+                        <h4><a href="/project/{{service.id}}">{{service.service_name}}</a></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-sm btn-danger" data-id="{{service.id}}">DELETE</button>
+                    </div>
+                    </div> --}}
