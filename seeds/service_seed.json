@@ -1,0 +1,20 @@
+[
+	{
+		"service_name": "Dog Walking"
+	},
+	{
+		"service_name": "Boarding"
+	},
+	{
+		"service_name": "House Sitting"
+	},
+	{
+		"service_name": "Drop-In Visits"
+	},
+	{
+		"service_name": "Doggy Day Care"
+	},
+	{
+		"service_name": "Pet Grooming"
+	}
+]

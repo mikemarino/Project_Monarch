@@ -28,8 +28,8 @@ Pet_sitter.init({
         },
         zipcode_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
+            allowNull: true,
+            // defaultValue: 0,
             references: {
                 model: 'zipcode',
                 key: 'id',
@@ -49,8 +49,8 @@ Pet_sitter.init({
         },
         service_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
+            allowNull: true,
+            // defaultValue: 0,
             references: {
                 model: 'service',
                 key: 'id',
@@ -58,8 +58,8 @@ Pet_sitter.init({
         },
         skill_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
+            allowNull: true,
+            // defaultValue: 0,
             references: {
                 model: 'skills',
                 key: 'id',
@@ -67,20 +67,20 @@ Pet_sitter.init({
         },
         aboutTitle: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         aboutText: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         watch: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         },
         watchSize: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
+            allowNull: true,
+            // defaultValue: 1,
             references: {
                 model: 'size',
                 key: 'id',
@@ -89,12 +89,12 @@ Pet_sitter.init({
         host: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
-            allowNull: false
+            allowNull: true
         },
         hostSize: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
+            allowNull: true,
+            // defaultValue: 0,
             references: {
                 model: 'size',
                 key: 'id',

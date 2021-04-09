@@ -15,7 +15,7 @@ Pet_owner.init({
     },
     pet_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'pet',
             key: 'id',

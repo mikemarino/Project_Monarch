@@ -15,7 +15,7 @@ Current_status.init({
     },
     case_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'case',
             key: 'id',
@@ -23,7 +23,7 @@ Current_status.init({
     },
     status_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'status',
             key: 'id',
