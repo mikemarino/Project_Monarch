@@ -18,15 +18,17 @@ const Invoice = require('./Plan_Provide/Invoice');
 const Service_planned = require('./Plan_Provide/Service_planned');
 const Service_provided = require('./Plan_Provide/Service_provided');
 
+
+const Service = require('./Sitter/Service');
 const Available_for = require('./Sitter/Available_for');
 const Pet_sitter = require('./Sitter/Pet_sitter');
 const Provides = require('./Sitter/Provides');
-const Service = require('./Sitter/Service');
 const Unit = require('./Sitter/Unit');
 const Zipcode = require('./Sitter/Zipcode');
 const Review = require('./Sitter/Review');
 const sitterReview = require('./Sitter/sitterReview');
 const Skills = require('./Sitter/Skills');
+const Status_Category = require('./Case/Status_category');
 // Pet belongsTo Species
 // Species.belongsToMany(Pet, {
 //     foreignKey: 'species_id',
@@ -35,11 +37,14 @@ const Skills = require('./Sitter/Skills');
 Pet.belongsTo(Species, {
     foreignKey: 'species_id'
 });
-Pet.belongsTo(Zipcode, {
-    foreignKey: 'zipcode_id'
-})
+// Pet.belongsTo(Zipcode, {
+//     foreignKey: 'zipcode_id'
+// })
 
 //
+Pet_sitter.belongsTo(Service, {
+    foreignKey: 'service_id'
+})
 Case.belongsTo(Pet, {
     foreignKey: 'pet_id'
 });
@@ -49,10 +54,7 @@ Case.belongsTo(Pet_sitter, {
     foreignKey: 'pet_sitter_id'
 });
 
-//
-Pet_sitter.belongsTo(Service, {
-    foreignKey: 'service_id'
-})
+
 
 Pet_sitter.belongsTo(Skills, {
     foreignKey: 'skill_id'
@@ -77,6 +79,9 @@ Pet_sitter.belongsToMany(Review, {
     foreignKey: 'PS_id'
 })
 
+Status.belongsTo(Status_Category, {
+    foreignKey: 'status_category_id'
+})
 
 module.exports = {
     User,

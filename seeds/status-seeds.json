@@ -1,34 +1,29 @@
 [
     {
-        "id": 14,
         "status_name": "Available",
         "status_category_id": 4,
         "is_closing_status": true
     },
 
     {
-        "id": 16,
         "status_name": "Available",
         "status_category_id": 4,
         "is_closing_status": false
     },
 
     {
-        "id": 18,
         "status_name": "Available",
         "status_category_id": 4,
         "is_closing_status": false
     },
 
     {
-        "id": 19,
         "status_name": "Available",
         "status_category_id": 4,
         "is_closing_status": false
     },
 
     {
-        "id": 4,
         "status_name": "Available",
         "status_category_id": 4,
         "is_closing_status": true

@@ -31,6 +31,59 @@ const withAuth = require('../utils/auth');
 
 
 
+router.get('/', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/login');
+        return;
+    }
+
+    res.render('login');
+});
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/profile');
+        return;
+    }
+
+    res.render('login');
+});
+
+router.get('/registerSitter', async (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/registerSitter');
+        return;
+    }
+    try {
+        // Get all service and JOIN with user data
+        const serviceData = await Service.findAll({
+            // include: [{
+            //     model: Service,
+            //     attributes: ['service_name'],
+            // }, ],
+        });
+
+        // Serialize data so the template can read it
+        const services = serviceData.map((service) => service.get({
+            plain: true
+        }));
+
+        // Pass serialized data and session flag into template
+        res.render('registerSitter', {
+            services,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+     res.render('registerSitter');
+});
+
+module.exports = router;
+
 // router.get('/', async (req, res) => {
 //     // find all pets
 //     try {
@@ -133,6 +186,9 @@ router.get('/profile', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+<<<<<<< HEAD
+*/
+=======
 
 router.get('/', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -155,3 +211,4 @@ router.get('/login', (req, res) => {
 
 module.exports = router;
 
+>>>>>>> main

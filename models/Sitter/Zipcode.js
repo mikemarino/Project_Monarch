@@ -15,7 +15,7 @@ Zipcode.init({
 
         zipcode: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
     },
         latitude: {
             type: DataTypes.INTEGER,

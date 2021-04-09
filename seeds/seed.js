@@ -31,6 +31,11 @@ const sitterReview = require('../models/Sitter/sitterReview')
 //--------------- BEGIN SEED DATA --------------------
 
 const userData = require('../seeds/user-seeds.json')
+const serviceData = require('../seeds/service_seed.json');
+const statCatData = require('../seeds/statcategory-seeds.json');
+const statusData = require('../seeds/status-seeds.json');
+const skillData = require('../seeds/skill_seeds.json');
+const sizeData = require('../seeds/size_seeds.json');
 
 const caseData = require('../seeds/case-seeds.json');
 const sitterData = require('../seeds/pet_sitter_seed.json');
@@ -38,19 +43,29 @@ const petData = require('../seeds/pet_seeds.json');
 const speciesData = require('../seeds/species_seeds.json');
 const unitData = require('../seeds/unit_seed.json');
 
+
 const zipData = require('../seeds/zipcode.json');
-// const reviewData = require('../seeds/zipcode.json');
+
 const noteData = require('../seeds/note-seeds.json');
 const currentData = require('../seeds/current-seeds.json');
-const statusData = require('../seeds/status-seeds.json');
+
 const pet_ownerData = require('../seeds/pet_sitter_seed.json');
-const statCatData = require('../seeds/statcategory-seeds.json');
+
+
+// const reviewData = require('../seeds/review_seeds.json')
+
 
 
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
 const seedDatabase = async () => {
     await sequelize.sync({
         force: true
+    });
+
+
+    const service = await Service.bulkCreate(serviceData, {
+        individualHooks: true,
+        returning: true,
     });
 
     const user = await User.bulkCreate(userData, {
@@ -62,15 +77,24 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
+    const statCategory = await Status_category.bulkCreate(statCatData, {
+        individualHooks: true,
+        returning: true,
+    });
+    const skill = await Skills.bulkCreate(skillData, {
+        individualHooks: true,
+        returning: true,
+    });
+
 
     const species = await Species.bulkCreate(speciesData, {
         individualHooks: true,
         returning: true,
     });
-    const sitRev = await sitterReview.bulkCreate(sitterReviewData, {
-        individualHooks: true,
-        returning: true,
-    });
+    // const sitRev = await sitterReview.bulkCreate(sitterReviewData, {
+    //     individualHooks: true,
+    //     returning: true,
+    // });
     const pet = await Pet.bulkCreate(petData, {
         individualHooks: true,
         returning: true,
@@ -110,10 +134,7 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const statCategory = await Status_category.bulkCreate(statCatData, {
-        individualHooks: true,
-        returning: true,
-    });
+
 
     const skills = await Skills.bulkCreate(skillData, {
         individualHooks: true,
@@ -125,18 +146,11 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const review = await Review.bulkCreate(reviewData, {
-        individualHooks: true,
-        returning: true,
-    });
+    // const review = await Review.bulkCreate(reviewData, {
+    //     individualHooks: true,
+    //     returning: true,
+    // });
 
-
-    // for (const project of projectData) {
-    //     await Project.create({
-    //         ...project,
-    //         user_id: users[Math.floor(Math.random() * users.length)].id,
-    //     });
-    // }
     process.exit(0);
 };
 

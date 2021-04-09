@@ -15,7 +15,7 @@ Case.init({
   },
   pet_sitter_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'pet_sitter',
       key: 'id',
@@ -23,7 +23,7 @@ Case.init({
   },
   pet_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'pet',
       key: 'id',
