@@ -36,9 +36,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static('public/css'));
-app.use(express.static('public/img'));
-
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

@@ -20,11 +20,13 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
+        console.log(req.body);
         const userData = await User.findOne({
             where: {
                 email: req.body.email
             }
         });
+       console.log(userData);
 
         if (!userData) {
             res
@@ -60,6 +62,23 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+router.post('/', (req, res) => {
+    User.create({
+      name: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    })
+    .then(userData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+    
+        res.json(userData);
+      });
+    });
+  });
 
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {

@@ -59,21 +59,21 @@ const pet_ownerData = require('../seeds/pet_sitter_seed.json');
 // THE ORDER OF SEED IS IMPORTANT - START WITH REFERENCE TABLES OR FACE FOREIGN KEY ERROR
 const seedDatabase = async () => {
     await sequelize.sync({
-        force: true
+        force: false
     });
 
-
-    const service = await Service.bulkCreate(serviceData, {
-        individualHooks: true,
-        returning: true,
-    });
 
     const user = await User.bulkCreate(userData, {
         individualHooks: true,
         returning: true,
     });
 
-    const zipcode = await Zipcode.bulkCreate(zipData, {
+    const service = await Service.bulkCreate(serviceData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+        const zipcode = await Zipcode.bulkCreate(zipData, {
         individualHooks: true,
         returning: true,
     });
