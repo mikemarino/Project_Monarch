@@ -9,11 +9,14 @@ class Pet_sitter extends Model {}
 Pet_sitter.init({
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             primaryKey: true,
             autoIncrement: true
         },
-
+        picture: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         sitter_first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -22,9 +25,21 @@ Pet_sitter.init({
             type: DataTypes.STRING,
             allowNull: false
         },
-        address: {
+
+        addressLine1: {
             type: DataTypes.STRING,
             allowNull: true,
+
+        },
+        addressLine2: {
+            type: DataTypes.STRING,
+            allowNull: true,
+
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: true,
+
         },
         zipcode_id: {
             type: DataTypes.INTEGER,
@@ -37,15 +52,17 @@ Pet_sitter.init({
         },
         mobile: {
             type: DataTypes.STRING,
-            allowNull: false
+            defaultValue: "No Phone",
+            allowNull: true
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
+            defaultValue: "No email",
+            allowNull: true,
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         service_id: {
             type: DataTypes.INTEGER,

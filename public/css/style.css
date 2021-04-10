@@ -19,3 +19,23 @@ form {
 	justify-content: center;
 	align-items: center;
 }
+
+/* .profile {
+    max-width: 300px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: solid black;
+
+} */
+
+.card-image {
+	   max-width: 300px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid black;
+}

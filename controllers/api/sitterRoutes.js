@@ -40,19 +40,32 @@ router.get('/:id', async (req, res) => {
 });
 
 // create new Pet_sitter
+// router.post('/', async (req, res) => {
+//     /* req.body should look like this...
+//     {
+//         "sitter_name": "Hanz Moleman",
+//         "address": "89 Sweeny St",
+//         "mobile": "141-151-1515",
+//         "email": "kingofmoles@simp.com",
+//         "phone": "321-252-1252"
+//     },
+//     */
+//     try {
+//         const caseData = await Pet_sitter.create(req.body);
+//         res.status(200).json(caseData);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
 router.post('/', async (req, res) => {
-    /* req.body should look like this...
-    {
-        "sitter_name": "Hanz Moleman",
-        "address": "89 Sweeny St",
-        "mobile": "141-151-1515",
-        "email": "kingofmoles@simp.com",
-        "phone": "321-252-1252"
-    },
-    */
     try {
-        const caseData = await Pet_sitter.create(req.body);
-        res.status(200).json(caseData);
+        const newSitter = await Pet_sitter.create({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
+
+        res.status(200).json(newSitter);
     } catch (err) {
         res.status(400).json(err);
     }

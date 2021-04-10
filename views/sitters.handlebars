@@ -1,17 +1,19 @@
 
-  {{#each Pet_sitter}}
+  {{#each sitters as |pet_sitter|}}
   <div class="col s4 m3">
-   
     <div class="card horizontal">
       <div class="card-image">
-        <img src="../public/img/samples/sample-2.jpg">
+        <img class="circle" src="{{picture}}" >
       </div>
       <div class="card-stacked">
+        <div class="card-title">
+        {{sitter_first_name}} {{sitter_last_name}}
+        </div>        
         <div class="card-content">          
           <p>Hello!! My name is {{sitter_first_name}} {{sitter_last_name}}. I'm available in zip code {{zipcode_id}}.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link to my full profile.</a>
+          <a href="profile/{{id}}">This is a link to my full profile.</a>
         </div>
       </div>
     </div>
@@ -19,4 +21,3 @@
 
   {{/each}}
 </ul>
-  
