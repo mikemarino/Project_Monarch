@@ -83,6 +83,7 @@ router.get('/registerSitter', async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('registerSitter', {
             services,
+            skills,
             logged_in: req.session.logged_in
         });
         return;
@@ -98,6 +99,76 @@ router.get('/registerSitter', async (req, res) => {
         return;
     }
 });
+
+
+router.get('/sitters', async (req, res) => {
+
+    try {
+        // Get all service and JOIN with user data
+        const sitterData = await Pet_sitter.findAll({
+            // include: [{
+            //     model: Service,
+            //     attributes: ['service_name'],
+            // }, ],
+        });
+
+        // Serialize data so the template can read it
+        const sitters = sitterData.map((sitter) => sitter.get({
+            plain: true
+        }));
+
+        // const skillData = await Skill.findAll({
+        //     // include: [{
+        //     //     model: Service,
+        //     //     attributes: ['service_name'],
+        //     // }, ],
+        // });
+
+
+        // const skills = skillData.map((skill) => skill.get({
+        //     plain: true
+        // }));
+
+
+        // Pass serialized data and session flag into template
+        res.render('sitters', {
+            sitters,
+            logged_in: req.session.logged_in
+        });
+        return;
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+    res.render('sitters');
+
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/registerSitter');
+        return;
+    }
+});
+
+router.get('/profile/:id', async (req, res) => {
+    try {
+        const profileData = await Pet_sitter.findByPk(req.params.id, {
+            // include: [{
+            //     model: Service,
+            //     attributes: ['name'],
+            // }, ],
+        });
+        const profile = profileData.get({
+            plain: true
+        });
+        res.render('profile', {
+            ...profile,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;
 

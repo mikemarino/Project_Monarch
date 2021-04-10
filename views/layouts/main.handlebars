@@ -10,7 +10,7 @@
   <script src="https://kit.fontawesome.com/357c939040.js" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+{{!-- <script src="../../public/js/script.js"></script> --}}
     {{!-- <link rel="stylesheet" href="css/jass.css"> --}}
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,7 +30,7 @@
           {{/if}}
         </li>
         <li><a href="/registerSitter">Become a Pet Sitter</a></li>
-        <li><a href="/profile">Profile</a></li>
+        <li><a href="/sitters">Sitters</a></li>
       </ul>
     </div>
   </nav>
@@ -70,6 +70,7 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="../../public/js/logout.js"></script>
+  
   {{/if}}
 </body>
 

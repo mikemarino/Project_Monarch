@@ -2,56 +2,56 @@
 	{
 		"sitter_first_name": "Police Chief Wiggum",
 		"sitter_last_name": "",
+		"picture": "img/samples/sample-1.jpg",
 		"address": "435 Main Street",
 		"zipcode": "",
 		"mobile": "141-151-1515",
-		"email": "snort@simp.com",	
+		"email": "snort@simp.com",
 		"phone": "321-515-1424",
 		"service_id": 1
-	
 	},
 	{
 		"sitter_first_name": "The Sea Captain",
 		"sitter_last_name": "",
+		"picture": "img/samples/sample-2.jpg",
 		"address": "",
 		"zipcode": "",
 		"mobile": "",
-		"email": "",	
+		"email": "",
 		"phone": "",
 		"service_id": 1
-	
 	},
 	{
 		"sitter_first_name": "Dr. Nick",
 		"sitter_last_name": "",
+		"picture": "img/samples/sample-3.jpg",
 		"address": "",
 		"zipcode": "",
 		"mobile": "",
-		"email": "",	
+		"email": "",
 		"phone": "",
 		"service_id": 1
-
 	},
 	{
 		"sitter_first_name": "Sideshow Mel",
 		"sitter_last_name": "",
+		"picture": "img/samples/sample-4.jpg",
 		"address": "",
 		"zipcode": "",
 		"mobile": "",
-		"email": "",	
+		"email": "",
 		"phone": "",
 		"service_id": 1
-	
 	},
 	{
 		"sitter_first_name": "Martin",
 		"sitter_last_name": "",
+		"picture": "img/samples/sample-5.jpg",
 		"address": "",
 		"zipcode": "",
 		"mobile": "",
-		"email": "",		
+		"email": "",
 		"phone": "",
 		"service_id": 1
-
 	}
 ]
