@@ -14,7 +14,8 @@ Service.init({
         },
         service_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            // defaultValue: "No Service",
+            allowNull: true
         },
         has_limit: {
             type: DataTypes.BOOLEAN,
@@ -22,7 +23,7 @@ Service.init({
         },
         unit_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             // add foreign key here
             references: {
                 model: 'unit',
@@ -33,7 +34,7 @@ Service.init({
         Cost_per_unit: {
             type: DataTypes.DECIMAL,
             // its asking to range decimal from (10,2)
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         sequelize,

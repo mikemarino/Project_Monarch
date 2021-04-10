@@ -18,7 +18,7 @@ Note.init(
         },
         case_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'case',
                 key: 'id',

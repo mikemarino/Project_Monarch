@@ -1,33 +1,29 @@
 [
 
     {
-        "id": 4,
+        "case_id": 1,
+        "status_id": 1,
+        "notes": "Dog walking is the most fun!"
+
+    },
+
+    {
+        "case_id": 2,
+        "status_id": 1,
+        "notes": "Dog walking is the most fun!"
+
+    },
+
+    {
+        "case_id": 3,
+        "status_id": 1,
+        "notes": "Dog walking is the most fun!"
+
+    },
+
+    {
         "case_id": 4,
-        "status_id": 0,
-        "notes": "Dog walking is the most fun!"
-
-    },
-
-    {
-        "id": 5,
-        "case_id": 5,
         "status_id": 1,
-        "notes": "Dog walking is the most fun!"
-
-    },
-
-    {
-        "id": 8,
-        "case_id": 8,
-        "status_id": 1,
-        "notes": "Dog walking is the most fun!"
-
-    },
-
-    {
-        "id": 9,
-        "case_id": 9,
-        "status_id": 0,
         "notes": "Dog walking is the most fun!"
 
     }

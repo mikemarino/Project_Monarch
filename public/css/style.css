@@ -1,0 +1,21 @@
+.border1 {
+	border: solid !important;
+	border-color: chocolate !important;
+}
+
+.rowInput .colInput {
+	float: none !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form {
+	margin-top: 30px;
+}
+
+.flexbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}

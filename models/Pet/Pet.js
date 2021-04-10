@@ -38,14 +38,15 @@ Pet.init({
         type: DataTypes.STRING,
         defaultValue: 'No address',
     },
-    zipcode_id: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-        references: {
-            model: 'zipcode',
-            key: 'id',
-        }
-    },
+    // zipcode_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true,
+    //     // defaultValue: 0,
+    //     references: {
+    //         model: 'zipcode',
+    //         key: 'id',
+    //     }
+    // },
     age: {
         type: DataTypes.STRING
     },

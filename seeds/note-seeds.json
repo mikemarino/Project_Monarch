@@ -1,33 +1,24 @@
 [
 
 {
-    "id": 4,
     "note_text": "Becky is the best dog sitter!",
-    "case_id": 4
+    "case_id": 1
 },
 
 {
-    "id": 5,
     "note_text": "George is the best dog sitter!",
-    "case_id": 5
+    "case_id": 2
 },
 
 {
-    "id": 6,
+    
     "note_text": "Michael is the best dog sitter!",
-    "case_id": 6
+    "case_id": 3
 },
 
 {
-    "id": 6,
     "note_text": "David is the best dog sitter!",
-    "case_id": 6
-},
-
-{
-    "id": 7,
-    "note_text": "Ramon is the best dog sitter!",
-    "case_id": 7
+    "case_id": 4
 }
 
 ]

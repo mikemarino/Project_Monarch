@@ -1,0 +1,145 @@
+<form class="col s12" id="petSitterForm" >
+        
+    <div class="row">
+
+        <div class="col s6 m6 m6 center-align border">
+            <img class="border1" src="img/samples/tempProfile.jpg" alt="temp profile picture">
+        </div>
+
+        <div class="col s6 m6 m6 border">
+        
+            <div class="row border">
+            <div class="col s12">
+            <input placeholder="First Name" id="first_name" type="text" class="validate">
+            {{!-- <label for="first_name">First Name</label> --}}
+            </div>
+            </div>
+
+            <div class="row border">
+            <div class="col s12">
+            <input placeholder="Last Name" id="last_name" type="text" class="validate">
+            {{!-- <label for="last_name">Last Name</label> --}}
+            </div>
+            </div> 
+
+            <div class="row border">
+            <div class="col s12">
+            <input placeholder="E-Mail" id="email" type="text" class="validate">
+            {{!-- <label for="last_name">Last Name</label> --}}
+            </div>
+            </div> 
+            </div>
+    </div>
+    
+        <div class="row border">
+            <div class="col s6 m6 m6 center-align border">
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="Address Line 1" id="addressLine1" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="Address Line 2" id="addressLine2" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="City" id="City" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="Zip Code" id="zipcode" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+            </div>
+            <div class="col s6 m6 m6 center-align border">
+                <p><h4>Become a Pet Sitter</h4></p>
+                <p><h5>with Pet Sit City!</h5></p>  
+            
+            </div>
+        </div>
+
+    <div class="row border">
+            <div class="col s6 m6 m6 center-align border">
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="Mobile Phone" id="addressLine1" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+            </div>
+        </div>
+
+           <div class="row border">
+            <div class="col s12 m12 m12 center-align border">
+
+                <div class="row">
+                <div class="input-field col s12">
+                <input placeholder="Your Tag Line" id="aboutTitle" type="text" class="validate">
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+                <div class="row">
+                <div class="input-field col s12">
+                    <textarea class="materialize-textarea" style="height: 200px;" placeholder="Pet Sitter Description" rows="55" cols="50" name="comment" id="aboutText" form="petSitterForm"  wrap="hard"></textarea>
+                {{!-- <input placeholder="Pet Sitter Description" id="addressLine1" type="text" class="validate"> --}}
+                {{!-- <label for="last_name">Last Name</label> --}}
+                </div>
+                </div> 
+
+            </div>
+        </div>
+
+            <div class="row border">
+            <div class="col s12 m12 m12 border">
+                SERVICES 
+                {{#if services.length}}
+                <div class="col-md-6 project-list">
+                <h3>Services:</h3>
+
+                    {{#each services as |service|}}
+
+                        <p>
+                            <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span>{{service.service_name}}</span>
+                            </label>
+                        </p>
+
+
+                    {{/each}}
+                </div>
+                {{/if}}
+
+            </div>
+        </div>
+
+
+
+
+
+
+</form>
+
+
+ {{!-- <div class="row mb-2">
+                        <div class="col-md-8">
+                        <h4><a href="/project/{{service.id}}">{{service.service_name}}</a></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-sm btn-danger" data-id="{{service.id}}">DELETE</button>
+                    </div>
+                    </div> --}}
