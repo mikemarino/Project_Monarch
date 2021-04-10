@@ -104,7 +104,7 @@
         </div>
 
             <div class="row border">
-            <div class="col s12 m12 m12 border">
+            <div class="col s6 m6 m6 border">
                 SERVICES 
                 {{#if services.length}}
                 <div class="col-md-6 project-list">
@@ -125,6 +125,28 @@
                 {{/if}}
 
             </div>
+             <div class="col s12 m12 m12 border">
+                Skills 
+                {{#if skills.length}}
+                <div class="col-md-6 project-list">
+                <h3>Services:</h3>
+
+                    {{#each skills as |skill|}}
+
+                        <p>
+                            <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span>{{skills.skill_name}}</span>
+                            </label>
+                        </p>
+
+
+                    {{/each}}
+                </div>
+                {{/if}}
+
+            </div>
+            
         </div>
 
 

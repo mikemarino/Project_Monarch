@@ -26,6 +26,7 @@ const Available_for = require('../models/Sitter/Available_for');
 const Pet_sitter = require('../models/Sitter/Pet_sitter');
 const Provides = require('../models/Sitter/Provides');
 const Service = require('../models/Sitter/Service');
+const Skill = require('../models/Sitter/Skills');
 const Unit = require('../models/Sitter/Unit');
 const withAuth = require('../utils/auth');
 
@@ -34,7 +35,7 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-        res.redirect('/login');
+        res.redirect('/profile');
         return;
     }
 
@@ -65,6 +66,19 @@ router.get('/registerSitter', async (req, res) => {
         const services = serviceData.map((service) => service.get({
             plain: true
         }));
+
+        const skillData = await Skill.findAll({
+            // include: [{
+            //     model: Service,
+            //     attributes: ['service_name'],
+            // }, ],
+        });
+
+
+        const skills = skillData.map((skill) => skill.get({
+            plain: true
+        }));
+
 
         // Pass serialized data and session flag into template
         res.render('registerSitter', {
