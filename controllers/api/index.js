@@ -12,7 +12,7 @@ router.use('/pet', petRoutes);
 router.use('/species', speciesRoutes);
 // router.use('/planProvide', planProvideRoutes);
 router.use('/sitter', sitterRoutes);
-// router.use('/users', userRoutes);
+router.use('/users', userRoutes);
 // router.use('/projects', projectRoutes);
 
 module.exports = router;
