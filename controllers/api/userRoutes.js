@@ -5,7 +5,7 @@ const {
 
 router.post('/', async (req, res) => {
     try {
-        
+
         const userData = await User.create(req.body);
 
         req.session.save(() => {
@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
                 email: req.body.email
             }
         });
-    console.log(userData);
+        console.log(userData);
         if (!userData) {
             res
                 .status(400)

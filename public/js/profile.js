@@ -12,7 +12,7 @@ const newFormHandler = async (event) => {
     const aboutText = document.querySelector('#aboutText').value.trim();
   
     if (sitter_first_name && sitter_last_name && email && address && zipcode_id && phone && mobile && aboutTitle && aboutText) {
-      const response = await fetch(`/api/projects`, {
+      const response = await fetch(`/api/profile`, {
         method: 'POST',
         body: JSON.stringify({ sitter_first_name,sitter_last_name, address, email, zipcode_id, phone, mobile,aboutTitle,aboutText }),
         headers: {
